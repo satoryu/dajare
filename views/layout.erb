@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>駄洒落</title>
+    <style type="text/css">
+      <!--
+      BODY {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+      #main_layout {
+        width: 920px;
+        margin: 0px auto;
+      }
+      #main_hdr {
+        text-align: center;
+      }
+      #main_ftr {
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        width: 920px;
+      }
+      -->
+    </style>
+  </head>
+  <body>
+    <div id="main_layout">
+      <div id="main_hdr">
+        <img src="/dajare.jpg" />
+      </div>
+      <div id="main_bdy">
+        <%= yield %>
+      </div>
+      <div id="main_ftr">
+        Copyright (c) <%= Time.now.year %> <a href="http://twitter.com/sato_ryu">sato_ryu</a> All Right Reserved.
+      </div>
+    </div>
+  </body>
+</html>
