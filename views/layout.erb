@@ -13,6 +13,7 @@
         margin: 0px auto;
       }
       #main_hdr {
+        margin-top: 200px;
         text-align: center;
       }
       #main_ftr {
@@ -21,13 +22,19 @@
         text-align: center;
         width: 920px;
       }
+      #generated_text {
+        font-size: 30pt;
+      }
       -->
     </style>
   </head>
   <body>
     <div id="main_layout">
       <div id="main_hdr">
-        <img src="/dajare.jpg" />
+        <img src="/dajare.jpg" /> <br />
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://dajare.cloudfoundry.com/" data-lang="ja">ツイート</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fdajare.cloudfoundry.com%2F&amp;send=false&amp;layout=button_count&amp;width=100&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=151229644971227" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
       </div>
       <div id="main_bdy">
         <%= yield %>

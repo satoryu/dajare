@@ -1,6 +1,7 @@
 # encoding: utf-8
 require "sinatra"
 require "pebbles/dajare"
+require "cgi"
 
 set :erb, :layout => true
 set :views, settings.root + '/views'
@@ -14,12 +15,11 @@ helpers do
 end
 
 get "/" do
+  if params[:text]
+    logger.info params[:text]
+    @original = params[:text]
+    @dajare = dajarize(@original).sample
+  end
   erb :index
 end
 
-post "/dajarize" do
-  logger.info params[:text]
-  @original = params[:text]
-  @dajares = dajarize(@original)
-  erb :dajarize
-end
