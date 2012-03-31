@@ -1,7 +1,11 @@
+#!/usr/bin/env ruby
 # encoding: utf-8
+
 require "sinatra"
-require "pebbles/dajare"
 require "cgi"
+
+require "bundler"
+Bundler.require
 
 set :erb, :layout => true
 set :views, settings.root + '/views'

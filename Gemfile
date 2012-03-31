@@ -1,4 +1,4 @@
 source :rubygems
 
 gem "sinatra"
-gem "pebbles-dajare"
+gem "pebbles-dajare", :require => 'pebbles/dajare'
