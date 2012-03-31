@@ -1,13 +1,13 @@
 <form method="GET" action="/">
   <label naeme="text">Enter a Japanese phrase: </label>
-  <input type="text" name="text" value="<%= @original || ""%>">
+  <input type="text" name="text" value="<%= @original ? h(@original) : ""%>">
   <input type="submit" value="generate">
 </form>
 
 <% if @dajare %>
 <div id="generated_text">
   <a href="https://twitter.com/intent/tweet?text=<%= CGI.escape "#{@dajare} http://dajare.cloudfoundry.com #dajare" %>">
-  <%= @dajare %>
+  <%= h @dajare %>
 </a>
 </div>
 
