@@ -1,5 +1,5 @@
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     google_suggest (0.0.3)
       nokogiri
@@ -8,7 +8,7 @@ GEM
       mini_portile (~> 0.6.0)
     pebbles-dajare (0.1.0)
       google_suggest
-    rack (1.6.1)
+    rack (1.6.4)
     rack-protection (1.5.3)
       rack
     sinatra (1.4.6)
@@ -23,3 +23,6 @@ PLATFORMS
 DEPENDENCIES
   pebbles-dajare
   sinatra
+
+BUNDLED WITH
+   1.10.5
