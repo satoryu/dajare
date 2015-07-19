@@ -6,9 +6,9 @@
 
 <% if @dajare %>
 <div id="generated_text">
-  <a href="https://twitter.com/intent/tweet?text=<%= CGI.escape "#{@dajare} http://dajare.cloudfoundry.com #dajare" %>">
-  <%= h @dajare %>
-</a>
+  <a href="https://twitter.com/intent/tweet?text=<%= CGI.escape "#{@dajare} #{request.url} #dajare" %>">
+    <%= h @dajare %>
+  </a>
 </div>
 
 <!-- Rakuten Widget FROM HERE --><script type="text/javascript">rakuten_design="slide";rakuten_affiliateId="05a30806.5fe64efc.08e2cfd5.68d7987a";rakuten_items="ctsmatch";rakuten_genreId=0;rakuten_size="728x200";rakuten_target="_blank";rakuten_theme="gray";rakuten_border="off";rakuten_auto_mode="off";rakuten_genre_title="off";rakuten_recommend="on";</script><script type="text/javascript" src="http://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js"></script><!-- Rakuten Widget TO HERE -->

@@ -1,34 +1,33 @@
-#!/usr/bin/env ruby
-# encoding: utf-8
-
-require "sinatra"
 require "cgi"
+require 'sinatra/base'
+require 'pebbles/dajare'
 
-require "bundler"
-Bundler.require
+class Dajare < Sinatra::Base
+  set :erb, layout: true
+  set :views, settings.root + '/views'
 
-set :erb, :layout => true
-set :views, settings.root + '/views'
+  enable :logging
 
-enable :logging
+  helpers do
+    def dajarize(original)
+      Pebbles::Dajare.generate_dajare(original)
+    end
 
-helpers do
-  def dajarize(original)
-    Pebbles::Dajare.generate_dajare(original)
+    def h(str)
+      CGI.escape_html(str.to_s)
+    end
   end
 
-  def h(str)
-    CGI.escape_html(str.to_s)
+  get "/" do
+    if params[:text]
+      logger.info params[:text]
+      @original = params[:text]
+      @original.chomp! if @original
+      @dajare = dajarize(@original.chomp).sample
+    end
+
+    erb :index
   end
+
+  run! if app_file == $0
 end
-
-get "/" do
-  if params[:text]
-    logger.info params[:text]
-    @original = params[:text]
-    @original.chomp! if @original
-    @dajare = dajarize(@original.chomp).sample
-  end
-  erb :index
-end
-
