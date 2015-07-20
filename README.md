@@ -1,17 +1,19 @@
-{<img src="https://github.com/satoryu/dajare/raw/master/public/dajare.jpg" />}[https://github.com/satoryu/dajare]
+[![Dajare](https://github.com/satoryu/dajare/raw/master/public/dajare.jpg)](https://github.com/satoryu/dajare)
 
-= What's this?
+# What's this?
 
 This is a Web application to help to generate dajares easily. 
 
-= Install
+# Install
 
-  git clone http://github.com/satoryu/dajare
-  cd dajare
-  bundle install 
-  bundle exec ./app.rb
+```
+  $ git clone http://github.com/satoryu/dajare
+  $ cd dajare
+  $ bundle install 
+  $ bundle exec rackup
+```
 
-= LICENSE
+# LICENSE
 
 The MIT License
 
