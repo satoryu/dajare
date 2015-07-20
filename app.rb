@@ -1,6 +1,7 @@
 require "cgi"
 require 'sinatra/base'
 require 'pebbles/dajare'
+require 'json'
 
 class Dajare < Sinatra::Base
   set :erb, layout: true
@@ -27,6 +28,18 @@ class Dajare < Sinatra::Base
     end
 
     erb :index
+  end
+
+  post '/webhook' do
+    req = JSON.parse(request.body.read)
+    logger.debug "Request: #{req.to_json}"
+
+    if req['event'] == 'room_message'
+      { color: 'purple', message: dajarize(req['message']['message']).sample, message_format: :text }.to_json
+    else
+      logger.info "'#{req['event']}' is called"
+      { color: 'red', message: "Unexpected event: #{req['event']}" }.to_json
+    end
   end
 
   run! if app_file == $0
