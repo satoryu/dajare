@@ -35,7 +35,7 @@ class Dajare < Sinatra::Base
     logger.debug "Request: #{req.to_json}"
 
     if req['event'] == 'room_message'
-      { color: 'purple', message: dajarize(req['message']['message']).sample, message_format: :text }.to_json
+      { color: 'purple', message: dajarize(req['item']['message']['message']).sample, message_format: :text }.to_json
     else
       logger.info "'#{req['event']}' is called"
       { color: 'red', message: "Unexpected event: #{req['event']}" }.to_json
