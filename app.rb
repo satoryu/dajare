@@ -73,7 +73,7 @@ class Dajare < Sinatra::Base
     uri = URI.parse('https://graph.facebook.com')
 
     req = Net::HTTP::Post.new("/v2.6/me/messages?access_token=#{ENV['FB_PAGE_ACCESS_TOKEN']}")
-    req.body = data.to_json
+    req.set_form_data(data)
     http = Net::HTTP.new(uri.host, uri.port)
     http.use_ssl = true
 
