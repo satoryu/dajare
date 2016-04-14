@@ -44,5 +44,13 @@ class Dajare < Sinatra::Base
     end
   end
 
+  get '/fb/messages' do
+    if params['hub.verify_token'] == ENV['FB_MESSENGER_VERIFY_TOKEN']
+      params['hub.challenge']
+    else
+      "Failed"
+    end
+  end
+
   run! if app_file == $0
 end
