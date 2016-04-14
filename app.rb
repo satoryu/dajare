@@ -56,8 +56,8 @@ class Dajare < Sinatra::Base
 
   post '/fb/messages' do
     json = JSON.parse(request.body.read)
-    message = json['entry']['messaging']['message']['text']
-    sender = json['entry']['messaging']['sender']['id']
+    message = json['entry'][0]['messaging'][0]['message']['text']
+    sender = json['entry'][0]['messaging'][0]['sender']['id']
 
     data = {
       recipient: {
