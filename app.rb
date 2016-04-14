@@ -69,7 +69,7 @@ class Dajare < Sinatra::Base
     }
 
     res = Net::HTTP.post_form(
-      URI.parse("https://https://graph.facebook.com/v2.6/me/messages?access_token=#{ENV['FB_PAGE_ACCESS_TOKEN']}"),
+      URI.parse("https://graph.facebook.com/v2.6/me/messages?access_token=#{ENV['FB_PAGE_ACCESS_TOKEN']}"),
       data)
 
   end
