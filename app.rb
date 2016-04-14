@@ -70,9 +70,14 @@ class Dajare < Sinatra::Base
 
     logger.info data
 
-    res = Net::HTTP.post_form(
-      URI.parse("https://graph.facebook.com/v2.6/me/messages?access_token=#{ENV['FB_PAGE_ACCESS_TOKEN']}"),
-      data)
+    uri = URI.parse('https://graph.facebook.com')
+
+    req = Net::HTTP::Post.new("/v2.6/me/messages?access_token=#{ENV['FB_PAGE_ACCESS_TOKEN']}")
+    req.body = data.to_json
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+
+    res = http.request(req)
 
     logger.info res.body
 
