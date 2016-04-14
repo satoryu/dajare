@@ -2,6 +2,8 @@ require "cgi"
 require 'sinatra/base'
 require 'pebbles/dajare'
 require 'json'
+require 'net/http'
+require 'uri'
 
 class Dajare < Sinatra::Base
   set :erb, layout: true
@@ -50,6 +52,26 @@ class Dajare < Sinatra::Base
     else
       "Failed"
     end
+  end
+
+  post '/fb/messages' do
+    json = JSON.parse(request.body.read)
+    message = json['entry']['messaging']['message']['text']
+    sender = json['entry']['messaging']['sender']['id']
+
+    data = {
+      recipient: {
+        id: sender
+      },
+      message: {
+        text: dajarize(message).sample
+      }
+    }
+
+    res = Net::HTTP.post_form(
+      URI.parse("https://https://graph.facebook.com/v2.6/me/messages?access_token=#{ENV['FB_PAGE_ACCESS_TOKEN']}"),
+      data)
+
   end
 
   run! if app_file == $0
