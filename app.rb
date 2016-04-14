@@ -74,7 +74,7 @@ class Dajare < Sinatra::Base
       URI.parse("https://graph.facebook.com/v2.6/me/messages?access_token=#{ENV['FB_PAGE_ACCESS_TOKEN']}"),
       data)
 
-    logger.info res
+    logger.info res.body
 
     ''
   end
