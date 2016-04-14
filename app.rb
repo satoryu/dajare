@@ -68,10 +68,15 @@ class Dajare < Sinatra::Base
       }
     }
 
+    logger.debug data
+
     res = Net::HTTP.post_form(
       URI.parse("https://graph.facebook.com/v2.6/me/messages?access_token=#{ENV['FB_PAGE_ACCESS_TOKEN']}"),
       data)
 
+    logger.info res
+
+    ''
   end
 
   run! if app_file == $0
