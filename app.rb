@@ -56,7 +56,7 @@ class Dajare < Sinatra::Base
 
   post '/fb/messages' do
     json = JSON.parse(request.body.read)
-    logger.debug "request: #{json.to_s}"
+    logger.info "request: #{json.to_s}"
     message = json['entry'][0]['messaging'][0]['message']['text']
     sender = json['entry'][0]['messaging'][0]['sender']['id']
 
