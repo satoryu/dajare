@@ -4,6 +4,7 @@ GEM
     google_suggest (0.0.6)
       nokogiri (~> 1.6.0)
     mini_portile2 (2.0.0)
+    minitest (5.8.3)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     pebbles-dajare (0.1.0)
@@ -21,6 +22,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  minitest
   pebbles-dajare
   sinatra
 

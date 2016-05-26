@@ -4,3 +4,7 @@ ruby '2.2.2'
 
 gem "sinatra"
 gem "pebbles-dajare", require: 'pebbles/dajare'
+
+group :test do
+  gem 'minitest'
+end
