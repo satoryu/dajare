@@ -4,6 +4,7 @@ GEM
     google_suggest (0.0.6)
       nokogiri (~> 1.6.0)
     mini_portile2 (2.0.0)
+    minitest (5.8.3)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     pebbles-dajare (0.1.0)
@@ -11,6 +12,9 @@ GEM
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
+    rack-test (0.6.3)
+      rack (>= 1.0)
+    rake (10.5.0)
     sinatra (1.4.7)
       rack (~> 1.5)
       rack-protection (~> 1.4)
@@ -21,7 +25,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  minitest
   pebbles-dajare
+  rack-test
+  rake
   sinatra
 
 BUNDLED WITH
