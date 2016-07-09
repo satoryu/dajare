@@ -29,6 +29,9 @@ class Dajare < Sinatra::Base
           self: "#{base_url}/descriptor"
         },
         hipchatApiConsumer: {
+          avatar: {
+            url: 'http://pds.exblog.jp/pds/1/201212/10/14/e0171614_8471446.jpg'
+          },
           scopes: %w[send_message view_messages]
         },
         capabilities: {
