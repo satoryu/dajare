@@ -28,6 +28,9 @@ class Dajare < Sinatra::Base
           homepage: base_url,
           self: "#{base_url}/descriptor"
         },
+        hipchatApiConsumer: {
+          scopes: %w[send_message view_messages]
+        },
         capabilities: {
           installable: {
             allowGlobal: true,
