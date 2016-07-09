@@ -32,7 +32,16 @@ class Dajare < Sinatra::Base
           installable: {
             allowGlobal: true,
             allowRoom: true,
-          }
+          },
+          webhook: [
+            {
+              name: "simple dajarize",
+              key: 'simpel_dajarizer',
+              url: "#{base_url}/webhook",
+              event: 'room_event',
+              pattern: "^.+$",
+            }
+          ]
         }
       }
     end
