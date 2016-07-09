@@ -38,7 +38,7 @@ class Dajare < Sinatra::Base
               name: "simple dajarize",
               key: 'simpel_dajarizer',
               url: "#{base_url}/webhook",
-              event: 'room_event',
+              event: 'room_message',
               pattern: "^.+$",
             }
           ]
