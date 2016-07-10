@@ -1,5 +1,6 @@
 require "cgi"
 require 'sinatra/base'
+require 'sinatra/json'
 require 'pebbles/dajare'
 require 'json'
 
@@ -17,6 +18,43 @@ class Dajare < Sinatra::Base
     def h(str)
       CGI.escape_html(str.to_s)
     end
+
+    def descriptor
+      {
+        name: "Dajare",
+        description: "An integration for making your rooms cool.",
+        key: "com.satoryu.dajare",
+        links: {
+          homepage: base_url,
+          self: "#{base_url}/descriptor"
+        },
+        capabilities: {
+          hipchatApiConsumer: {
+            avatar: {
+              url: 'http://event.shoeisha.jp/static/images/speaker/954/18d1_mr_kawaguchi.png'
+            },
+            scopes: %w[send_message view_messages]
+          },
+          installable: {
+            allowGlobal: true,
+            allowRoom: true,
+          },
+          webhook: [
+            {
+              name: "simple dajarize",
+              key: 'simpel_dajarizer',
+              url: "#{base_url}/webhook",
+              event: 'room_message',
+              pattern: "^.+$",
+            }
+          ]
+        }
+      }
+    end
+
+    def base_url
+      "#{request.scheme}://#{request.host}"
+    end
   end
 
   get "/" do
@@ -28,6 +66,10 @@ class Dajare < Sinatra::Base
     end
 
     erb :index
+  end
+
+  get '/descriptor' do
+    json descriptor
   end
 
   post '/webhook' do

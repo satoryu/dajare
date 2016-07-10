@@ -2,16 +2,48 @@
 
 # What's this?
 
-This is a Web application to help to generate dajares easily. 
+This is a Web application to help to generate dajares easily.
+This also has endpoints to work as HipChat Add-on.
+This add-on will start converting all message in rooms if you install the rooms.
+
+The demo server is running on Heroku. [Try it!](https://dajare.herokuapp.com/)
+
+# Prerequiresites
+
+* Ruby 2.2.2
 
 # Install
+
+## Install into your server
 
 ```
   $ git clone http://github.com/satoryu/dajare
   $ cd dajare
   $ bundle install 
-  $ bundle exec rackup
+  $ bundle exec rackup # Launch Dajare server
 ```
+
+## Instal it as a HipChat integration
+
+Suppose your dajare server is running on `https://dajare.example.com`.
+
+  1. Visit your integrations dashboard like https://youraccount.hipchat.com/addons/
+  2. Click `'Install an integration from a descriptor URL'` at the bottom of the dashboard.
+  3. Fill in Descriptor URL with `https://dajare.example.com/descriptor`
+  4. Click `Continue` then click `Approve`. 
+  5. Done!
+
+
+# Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/satoryu/dajare. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
+
 
 # LICENSE
 
