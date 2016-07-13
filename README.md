@@ -23,7 +23,7 @@ The demo server is running on Heroku. [Try it!](https://dajare.herokuapp.com/)
   $ bundle exec rackup # Launch Dajare server
 ```
 
-## Instal it as a HipChat integration
+## Install it as a HipChat integration
 
 Suppose your dajare server is running on `https://dajare.example.com`.
 
