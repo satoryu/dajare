@@ -8,6 +8,10 @@ This add-on will start converting all message in rooms if you install the rooms.
 
 The demo server is running on Heroku. [Try it!](https://dajare.herokuapp.com/)
 
+Or deploy it!
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 # Prerequiresites
 
 * Ruby 2.2.2
