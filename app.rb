@@ -31,7 +31,7 @@ class Dajare < Sinatra::Base
         capabilities: {
           hipchatApiConsumer: {
             avatar: {
-              url: 'http://event.shoeisha.jp/static/images/speaker/954/18d1_mr_kawaguchi.png'
+              url: ENV['HIPCHAT_AVATAR_URL']
             },
             scopes: %w[send_message view_messages]
           },
