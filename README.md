@@ -42,12 +42,15 @@ Suppose your dajare server is running on `https://dajare.example.com`.
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/satoryu/dajare. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+For developers,
 
+  1. Fork it
+  2. Create your feature branch (`git checkout -b my-new-feature`)
+  3. Commit your changes (`git commit -am 'Add some feature'`)
+  4. Push to the branch (`git push origin my-new-feature`)
+  5. Create new Pull Request
+
+<a href='https://pledgie.com/campaigns/16591'><img alt='Click here to lend your support to: pebbles-dajare and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/16591.png?skin_name=chrome' border='0' ></a>
 
 # LICENSE
 
