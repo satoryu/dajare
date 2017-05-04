@@ -14,7 +14,7 @@ Or deploy it!
 
 # Prerequiresites
 
-* Ruby 2.2.2
+* Ruby 2.3.3 or later
 
 # Install
 
