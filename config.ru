@@ -1,3 +1,6 @@
 require File.join(__dir__, 'app')
+require File.join(__dir__, 'api')
 
-run Dajare
+map '/' do
+  run Dajare::App
+end

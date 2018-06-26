@@ -4,87 +4,87 @@ require 'sinatra/json'
 require 'pebbles/dajare'
 require 'json'
 
-class Dajare < Sinatra::Base
-  set :erb, layout: true
-  set :views, settings.root + '/views'
+module Dajare
+  class App < Sinatra::Base
+    set :erb, layout: true
+    set :views, settings.root + '/views'
 
-  enable :logging
+    enable :logging
 
-  helpers do
-    def dajarize(original)
-      Pebbles::Dajare.generate_dajare(original)
-    end
+    helpers do
+      def dajarize(original)
+        Pebbles::Dajare.generate_dajare(original)
+      end
 
-    def h(str)
-      CGI.escape_html(str.to_s)
-    end
+      def h(str)
+        CGI.escape_html(str.to_s)
+      end
 
-    def descriptor
-      {
-        name: "Dajare",
-        description: "An integration for making your rooms cool.",
-        key: "com.satoryu.dajare",
-        links: {
-          homepage: base_url,
-          self: "#{base_url}/descriptor"
-        },
-        capabilities: {
-          hipchatApiConsumer: {
-            avatar: {
-              url: ENV['HIPCHAT_AVATAR_URL']
+      def descriptor
+        {
+          name: "Dajare",
+          description: "An integration for making your rooms cool.",
+          key: "com.satoryu.dajare",
+          links: {
+            homepage: base_url,
+            self: "#{base_url}/descriptor"
+          },
+          capabilities: {
+            hipchatApiConsumer: {
+              avatar: {
+                url: ENV['HIPCHAT_AVATAR_URL']
+              },
+              scopes: %w[send_message view_messages]
             },
-            scopes: %w[send_message view_messages]
-          },
-          installable: {
-            allowGlobal: true,
-            allowRoom: true,
-          },
-          webhook: [
-            {
-              name: "simple dajarize",
-              key: 'simpel_dajarizer',
-              url: "#{base_url}/webhook",
-              event: 'room_message',
-              pattern: "^.+$",
-            }
-          ]
+            installable: {
+              allowGlobal: true,
+              allowRoom: true,
+            },
+            webhook: [
+              {
+                name: "simple dajarize",
+                key: 'simpel_dajarizer',
+                url: "#{base_url}/webhook",
+                event: 'room_message',
+                pattern: "^.+$",
+              }
+            ]
+          }
         }
-      }
+      end
+
+      def base_url
+        "#{request.scheme}://#{request.host}"
+      end
     end
 
-    def base_url
-      "#{request.scheme}://#{request.host}"
-    end
-  end
+    get "/" do
+      if params[:text]
+        logger.info params[:text]
+        @original = params[:text]
+        @original.chomp! if @original
+        @dajare = dajarize(@original.chomp).sample
+      end
 
-  get "/" do
-    if params[:text]
-      logger.info params[:text]
-      @original = params[:text]
-      @original.chomp! if @original
-      @dajare = dajarize(@original.chomp).sample
+      erb :index
     end
 
-    erb :index
-  end
+    get '/descriptor' do
+      json descriptor
+    end
 
-  get '/descriptor' do
-    json descriptor
-  end
+    post '/webhook' do
+      req = JSON.parse(request.body.read)
+      logger.debug "Request: #{req.to_json}"
 
-  post '/webhook' do
-    req = JSON.parse(request.body.read)
-    logger.debug "Request: #{req.to_json}"
-
-    if req['event'] == 'room_message'
-      message = req['item']['message']['message']
-      message.gsub!(/\A\/d.*\s+/, '')
-      { color: 'purple', message: dajarize(message).sample, message_format: :text }.to_json
-    else
-      logger.info "'#{req['event']}' is called"
-      { color: 'red', message: "Unexpected event: #{req['event']}" }.to_json
+      if req['event'] == 'room_message'
+        message = req['item']['message']['message']
+        message.gsub!(/\A\/d.*\s+/, '')
+        { color: 'purple', message: dajarize(message).sample, message_format: :text }.to_json
+      else
+        logger.info "'#{req['event']}' is called"
+        { color: 'red', message: "Unexpected event: #{req['event']}" }.to_json
+      end
     end
   end
-
-  run! if app_file == $0
 end

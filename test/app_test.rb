@@ -4,7 +4,7 @@ class AppTest < MiniTest::Unit::TestCase
   include Rack::Test::Methods
 
   def app
-    Dajare
+    Dajare::App
   end
 
   def test_index
