@@ -3,7 +3,7 @@ require 'sinatra/json'
 
 module Dajare
   class Api < Sinatra::Base
-    get '/' do
+    post '/' do
       json 'Success'
     end
   end

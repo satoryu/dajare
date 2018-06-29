@@ -8,7 +8,7 @@ class ApiTest < MiniTest::Unit::TestCase
   end
 
   def test_index
-    get '/'
+    post '/', JSON.generate(text: 'こんにちわ')
 
     assert last_response.ok?
   end
