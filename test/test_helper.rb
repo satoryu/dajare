@@ -2,5 +2,6 @@ ENV['RACK_ENV'] = 'test'
 require 'minitest/autorun'
 require 'rack/test'
 
-require File.expand_path '../app.rb', __dir__
-require File.expand_path '../api.rb', __dir__
+$LOAD_PATH.unshift(File.expand_path('../src', __dir__))
+
+require 'dajare'

@@ -1,5 +1,6 @@
-require File.join(__dir__, 'app')
-require File.join(__dir__, 'api')
+$LOAD_PATH.unshift(File.expand_path('./src', __dir__))
+
+require 'dajare'
 
 map '/' do
   run Dajare::App

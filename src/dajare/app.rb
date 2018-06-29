@@ -7,7 +7,8 @@ require 'json'
 module Dajare
   class App < Sinatra::Base
     set :erb, layout: true
-    set :views, settings.root + '/views'
+    set :views,  File.expand_path('./views', __dir__)
+    set :public_folder, File.expand_path('../../public', __dir__)
 
     enable :logging
 
