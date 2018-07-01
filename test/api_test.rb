@@ -34,4 +34,10 @@ class ApiTest < MiniTest::Test
 
     assert last_response.bad_request?
   end
+
+  def test_bad_request_if_non_json_request
+    post '/', 'invalid text'
+
+    assert last_response.bad_request?
+  end
 end

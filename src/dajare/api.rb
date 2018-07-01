@@ -9,7 +9,12 @@ module Dajare
     helpers Dajare::Helpers
 
     post '/' do
-      body = JSON.parse(request.body.read)
+      begin
+        body = JSON.parse(request.body.read)
+      rescue JSON::ParserError
+        return 400
+      end
+
       text = body['text']
       return 400 if text.nil?
 
