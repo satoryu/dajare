@@ -10,3 +10,6 @@ rvm:
 before_install: gem install bundler
 
 script: bundle exec rake minitest
+
+notifications:
+  email: false
