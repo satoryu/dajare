@@ -28,4 +28,10 @@ class ApiTest < MiniTest::Test
       assert_equal expected_puns, puns
     end
   end
+
+  def test_bad_request_if_no_given_text
+    post '/', JSON.generate(foo: 'bar'), { 'Content-Type': 'application/json' }
+
+    assert last_response.bad_request?
+  end
 end

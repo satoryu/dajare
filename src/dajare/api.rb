@@ -11,6 +11,8 @@ module Dajare
     post '/' do
       body = JSON.parse(request.body.read)
       text = body['text']
+      return 400 if text.nil?
+
       res = { puns: dajarize(text) }
 
       json res
