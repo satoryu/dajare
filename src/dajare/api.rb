@@ -9,7 +9,8 @@ module Dajare
     helpers Dajare::Helpers
 
     post '/' do
-      json 'Success'
+      res = { puns: %w[a b c] }
+      json res
     end
   end
 end

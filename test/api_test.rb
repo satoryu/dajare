@@ -7,9 +7,14 @@ class ApiTest < MiniTest::Test
     Dajare::Api
   end
 
-  def test_index
-    post '/', JSON.generate(text: 'こんにちわ')
+  def json_body
+    JSON.parse(last_response.body)
+  end
+
+  def test_text_given
+    post '/', JSON.generate(text: 'こんにちわ'), {'Content-Type': 'application/json'}
 
     assert last_response.ok?
+    assert json_body.key?('puns')
   end
 end
