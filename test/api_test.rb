@@ -15,6 +15,17 @@ class ApiTest < MiniTest::Test
     post '/', JSON.generate(text: 'こんにちわ'), {'Content-Type': 'application/json'}
 
     assert last_response.ok?
-    assert json_body.key?('puns')
+  end
+
+  def test_resonse_json
+    expected_puns = %w[こんにチワワ こんにチワトラ]
+
+    Pebbles::Dajare.stub :generate_dajare, -> (_) { expected_puns } do
+      post '/', JSON.generate(text: 'こんにちわ'), { 'Content-Type': 'application/json' }
+
+      puns = json_body['puns']
+      refute_nil puns
+      assert_equal expected_puns, puns
+    end
   end
 end

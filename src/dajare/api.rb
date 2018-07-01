@@ -9,7 +9,10 @@ module Dajare
     helpers Dajare::Helpers
 
     post '/' do
-      res = { puns: %w[a b c] }
+      body = JSON.parse(request.body.read)
+      text = body['text']
+      res = { puns: dajarize(text) }
+
       json res
     end
   end
