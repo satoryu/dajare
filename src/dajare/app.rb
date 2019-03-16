@@ -25,23 +25,5 @@ module Dajare
 
       erb :index
     end
-
-    get '/descriptor' do
-      json descriptor
-    end
-
-    post '/webhook' do
-      req = JSON.parse(request.body.read)
-      logger.debug "Request: #{req.to_json}"
-
-      if req['event'] == 'room_message'
-        message = req['item']['message']['message']
-        message.gsub!(/\A\/d.*\s+/, '')
-        { color: 'purple', message: dajarize(message).sample, message_format: :text }.to_json
-      else
-        logger.info "'#{req['event']}' is called"
-        { color: 'red', message: "Unexpected event: #{req['event']}" }.to_json
-      end
-    end
   end
 end
