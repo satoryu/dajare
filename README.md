@@ -50,8 +50,6 @@ For developers,
   4. Push to the branch (`git push origin my-new-feature`)
   5. Create new Pull Request
 
-<a href='https://pledgie.com/campaigns/16591'><img alt='Click here to lend your support to: pebbles-dajare and make a donation at pledgie.com !' src='https://pledgie.com/campaigns/16591.png?skin_name=chrome' border='0' ></a>
-
 # LICENSE
 
 The MIT License
