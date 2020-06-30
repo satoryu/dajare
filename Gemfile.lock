@@ -8,7 +8,7 @@ GEM
     mustermann (1.0.3)
     pebbles-dajare (1.0.1)
       google_suggest (~> 1.0.0)
-    rack (2.0.8)
+    rack (2.2.3)
     rack-protection (2.0.5)
       rack
     rack-test (1.1.0)
