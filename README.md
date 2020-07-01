@@ -14,13 +14,11 @@ Or deploy it!
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-### Prerequiresites
+### Prerequisites
 
 * Ruby 2.3.3 or later
 
 ## Install
-
-### Install into your server
 
 ```sh
   git clone http://github.com/satoryu/dajare
@@ -28,13 +26,3 @@ Or deploy it!
   bundle install
   bundle exec rackup # Launch Dajare server
 ```
-
-### Install it as a HipChat integration
-
-Suppose your dajare server is running on `https://dajare.example.com`.
-
-  1. Visit your integrations dashboard like https://youraccount.hipchat.com/addons/
-  2. Click `'Install an integration from a descriptor URL'` at the bottom of the dashboard.
-  3. Fill in Descriptor URL with `https://dajare.example.com/descriptor`
-  4. Click `Continue` then click `Approve`.
-  5. Done!
