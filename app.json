@@ -8,10 +8,5 @@
       "size": "Standard-1X"
     }
   },
-  "env": {
-    "HIPCHAT_AVATAR_URL": {
-      "description": "The url of the avatar appearing in HipChat",
-      "required": true
-    }
-  }
+  "env": {}
 }
