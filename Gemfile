@@ -6,7 +6,7 @@ ruby '~> 2.7'
 
 gem 'pebbles-dajare', require: 'pebbles/dajare'
 gem 'rake'
-gem 'sinatra', '~> 2.0.2'
+gem 'sinatra', '~> 2.0'
 gem 'sinatra-contrib'
 
 group :test do
