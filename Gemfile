@@ -2,10 +2,11 @@
 
 source 'https://rubygems.org'
 
-ruby '~> 2.7'
+ruby '~> 3.0'
 
 gem 'pebbles-dajare', require: 'pebbles/dajare'
 gem 'rake'
+gem 'rexml'
 gem 'sinatra', '~> 2.0'
 gem 'sinatra-contrib'
 
