@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches: [ master ]
-    paths: &target_paths
+    paths:
       - 'src/**'
       - 'public/**'
       - 'test/**'
