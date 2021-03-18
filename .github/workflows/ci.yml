@@ -14,7 +14,13 @@ on:
   pull_request:
     branches: [ master ]
     paths:
-      <<: *target_paths
+      - 'src/**'
+      - 'public/**'
+      - 'test/**'
+      - Gemfile
+      - Gemfile.lock
+      - Rakefile
+      - config.ru
 
 jobs:
   test:
