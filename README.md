@@ -1,5 +1,7 @@
 # Dajare (駄洒落)
 
+[![CI](https://github.com/satoryu/dajare/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/satoryu/dajare/actions/workflows/ci.yml)
+
 [![Dajare](https://github.com/satoryu/dajare/raw/master/public/dajare.jpg)](https://github.com/satoryu/dajare)
 
 ## What's this?

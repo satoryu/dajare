@@ -3,18 +3,24 @@ name: CI
 on:
   push:
     branches: [ master ]
-    paths: &target-paths
-      - 'src/**'
-      - 'public/**'
-      - 'test/**'
-      - Gemfile
-      - Gemfile.lock
-      - Rakefile
-      - config.ru
+    paths:
+    - 'src/**'
+    - 'public/**'
+    - 'test/**'
+    - Gemfile
+    - Gemfile.lock
+    - Rakefile
+    - config.ru
   pull_request:
     branches: [ master ]
     paths:
-      <<: *target-paths
+    - 'src/**'
+    - 'public/**'
+    - 'test/**'
+    - Gemfile
+    - Gemfile.lock
+    - Rakefile
+    - config.ru
 
 jobs:
   test:
