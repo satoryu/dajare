@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 ruby '~> 3.0'
 
 gem 'pebbles-dajare', require: 'pebbles/dajare'
+gem 'puma'
 gem 'rake'
 gem 'rexml'
 gem 'sinatra', '~> 2.0'
