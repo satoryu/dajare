@@ -2,7 +2,6 @@ require 'sinatra/base'
 require 'sinatra/json'
 require 'dajare/helpers'
 
-# TODO: this comment to check this change would trigger CI
 module Dajare
   class Api < Sinatra::Base
     enable :logging
