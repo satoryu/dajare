@@ -16,7 +16,7 @@ Or deploy it!
 
 ### Prerequisites
 
-* Ruby 2.3.3 or later
+- Ruby 3.0.0
 
 ## Install
 
