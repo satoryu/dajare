@@ -1,32 +1,31 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    backports (3.18.1)
     google_suggest (1.0.3)
-    minitest (5.14.1)
-    multi_json (1.14.1)
+    minitest (5.14.4)
+    multi_json (1.15.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     pebbles-dajare (1.0.1)
       google_suggest (~> 1.0.0)
     rack (2.2.3)
-    rack-protection (2.0.8.1)
+    rack-protection (2.1.0)
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
-    rake (13.0.1)
-    ruby2_keywords (0.0.2)
-    sinatra (2.0.8.1)
+    rake (13.0.3)
+    rexml (3.2.4)
+    ruby2_keywords (0.0.4)
+    sinatra (2.1.0)
       mustermann (~> 1.0)
-      rack (~> 2.0)
-      rack-protection (= 2.0.8.1)
+      rack (~> 2.2)
+      rack-protection (= 2.1.0)
       tilt (~> 2.0)
-    sinatra-contrib (2.0.8.1)
-      backports (>= 2.8.2)
+    sinatra-contrib (2.1.0)
       multi_json
       mustermann (~> 1.0)
-      rack-protection (= 2.0.8.1)
-      sinatra (= 2.0.8.1)
+      rack-protection (= 2.1.0)
+      sinatra (= 2.1.0)
       tilt (~> 2.0)
     tilt (2.0.10)
 
@@ -38,11 +37,12 @@ DEPENDENCIES
   pebbles-dajare
   rack-test
   rake
+  rexml
   sinatra (~> 2.0)
   sinatra-contrib
 
 RUBY VERSION
-   ruby 2.7.0p0
+   ruby 3.0.0p0
 
 BUNDLED WITH
-   2.1.2
+   2.2.3
