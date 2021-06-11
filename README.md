@@ -28,3 +28,5 @@ Or deploy it!
   bundle install
   bundle exec rackup # Launch Dajare server
 ```
+
+hogehoge
