@@ -32,7 +32,7 @@ jobs:
         env:
           BUNDLE_WITHOUT: vscode
         with:
-          ruby-version: "3.0"
+          ruby-version: "3.1"
           bundler-cache: true
       - name: Run test
         run: bundle exec rake
