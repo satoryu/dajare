@@ -8,8 +8,8 @@ gem 'pebbles-dajare', require: 'pebbles/dajare'
 gem 'puma'
 gem 'rake'
 gem 'rexml'
-gem 'sinatra', '~> 2.2'
-gem 'sinatra-contrib'
+gem 'sinatra', '~> 3.0'
+gem 'sinatra-contrib', '~> 3.0'
 
 group :test do
   gem 'minitest'
