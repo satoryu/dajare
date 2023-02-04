@@ -4,6 +4,7 @@ on:
   push:
     branches: [ master ]
     paths:
+    - .github/workflows/**
     - 'src/**'
     - 'public/**'
     - 'test/**'
@@ -14,6 +15,7 @@ on:
   pull_request:
     branches: [ master ]
     paths:
+    - .github/workflows/**
     - 'src/**'
     - 'public/**'
     - 'test/**'
@@ -27,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: ruby/setup-ruby@v1
         env:
           BUNDLE_WITHOUT: vscode
