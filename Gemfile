@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-ruby '~> 3.1'
+ruby '~> 3.2'
 
 gem 'pebbles-dajare', require: 'pebbles/dajare'
 gem 'puma'
