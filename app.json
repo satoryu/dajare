@@ -8,6 +8,6 @@
       "size": "Standard-1X"
     }
   },
-  "stack": "heroku-20",
+  "stack": "heroku-22",
   "env": {}
 }
